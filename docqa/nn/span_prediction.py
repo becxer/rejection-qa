@@ -37,6 +37,9 @@ class BoundaryPrediction(Prediction):
             self._bound_predictions[bound] = pred
             return pred
 
+    def get_logits(self):
+        return self.start_logits, self.end_logits
+
     def get_span_scores(self):
         return tf.exp(tf.expand_dims(self.start_logits, 2) + tf.expand_dims(self.end_logits, 1))
 
