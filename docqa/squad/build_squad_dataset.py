@@ -146,7 +146,7 @@ def main():
     dev = list(parse_squad_data(args.dev_file, "dev", tokenzier))
 
     print("Saving...")
-    SquadCorpus.make_corpus(train, dev)
+    SquadCorpus.make_corpus(train, dev, config.CORPUS_DIR)
     print("Done")
 
 
